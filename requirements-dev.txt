@@ -1,0 +1,4 @@
+bentoutils==0.0.40
+setuptools
+twine
+wheel
