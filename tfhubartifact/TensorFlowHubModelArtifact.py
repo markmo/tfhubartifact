@@ -51,6 +51,13 @@ class TensorFlowHubModelArtifact(BentoServiceArtifact):
                 self._load_from_directory(model)
             else:
                 raise InvalidArgument('model path should be a directory')
+        elif isinstance(model, dict):
+            self._load_from_dict(model)
+        else:
+            raise InvalidArgument(
+                "Expecting a pretrained model path or dictionary of format "
+                "{'embedder': <model object>}"
+            )
 
         return self
 
