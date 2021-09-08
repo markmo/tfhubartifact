@@ -45,12 +45,12 @@ class TensorFlowHubModelArtifact(BentoServiceArtifact):
             )
         self._model = model['embedder']
 
-    def pack(self, model):
+    def pack(self, model, opts=None, update=False):
         if isinstance(model, str):
             if os.path.isdir(model):
                 self._load_from_directory(model)
             else:
-                raise InvalidArgument('model path should be a directory')
+                raise InvalidArgument('model should be the path name of a directory')
         elif isinstance(model, dict):
             self._load_from_dict(model)
         else:

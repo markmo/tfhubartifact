@@ -5,7 +5,7 @@ with open('README.md', 'r') as f:
 
 setuptools.setup(
     name='tfhubartifact',
-    version='0.0.5',
+    version='0.0.6',
     author='Mark Moloney',
     author_email='m4rkmo@gmail.com',
     description='BentoML artifact framework for TensorFlow Hub models',
